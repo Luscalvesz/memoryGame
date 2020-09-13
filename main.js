@@ -38,7 +38,7 @@ function flipCard() {
 function match() {
     let isMatch = firstCard.dataset.card == secondCard.dataset.card;
     !isMatch ? disableCards() : resetCards(isMatch);
-    // end();só 
+    endGame();
 }
 
 // block cards
@@ -70,10 +70,19 @@ function resetCards(isMatch = false) {
 
 function endGame() {
     var box = document.getElementById('box')
-    box.innerHTML = `<div class='complete'><p class='congrats'>Você completou o jogo!<br> <spam>Parabéns!</spam></p>
-    <img src="imgs/brabo.png" alt="lanso a braba fdp">
-    <button class='playAgain'><a href='index.html'>Jogar Novamente!</a></button>
-    <a class='copy' href='https://luscadev.com.br/' target='_blank'>Luscadev || 2020</a></div>`
+
+    if (cards[0].className == 'memoryCard flip' && cards[1].className == 'memoryCard flip' 
+    && cards[2].className == 'memoryCard flip' && cards[3].className == 'memoryCard flip'
+    && cards[4].className == 'memoryCard flip' && cards[5].className == 'memoryCard flip'
+    && cards[6].className == 'memoryCard flip' && cards[7].className == 'memoryCard flip') {
+       
+        setTimeout(() => {
+            box.innerHTML = `<div class='complete'><p class='congrats'>Você completou o jogo!<br> <spam>Parabéns!</spam></p>
+            <img src="imgs/brabo.png" alt="lanso a braba fdp">
+            <button class='playAgain'><a href='index.html'>Jogar Novamente!</a></button>
+            <a class='copy' href='https://luscadev.com.br/' target='_blank'>Luscadev || 2020</a></div>` 
+        }, 2000);
+    }
 }
 
 // add eventListener
