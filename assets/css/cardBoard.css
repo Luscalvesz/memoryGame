@@ -1,0 +1,9 @@
+.memoryCard {
+    width: 130px;
+    height: 185px;
+    margin: 5px;
+    transform-style: preserve-3d;
+    transition: 0.7s;
+    position: relative;
+    margin: auto;
+}

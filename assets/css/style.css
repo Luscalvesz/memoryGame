@@ -2,6 +2,8 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    /* font-family: system-ui; */
+    font-family: 'Press Start 2P', cursive;
 } 
   
 body {
@@ -13,19 +15,59 @@ body {
 }
 
 #box{
-    background-color: #640ada;
+    background: rgb(49,0,75);
+    background: linear-gradient(0deg, rgba(49,0,75,1) 10%, rgba(0,9,255,1) 100%);
     display: flex;
+    flex-direction: column;
     padding: 25px;
     border-radius: 30px;
+    align-items: center;
+    width: 80%;
 }
 
-#title{
-    margin: auto 50px;
-    font-family: monospace;
-    font-size: 50px;
-    letter-spacing: 3px;
+#nxtLvl{
+    position: absolute;
+    height: 96%;
+    width: 80%;
+    background: rgb(49,0,75);
+    background: linear-gradient(0deg, rgba(49,0,75,1) 10%, rgba(0,9,255,1) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+}
+
+.textNext{
+    color: white;
+    font-size: 30px;
     text-align: center;
-    width: 300px;
+
+}
+
+.imgNext{
+    margin: 50px 0;
+}
+
+.buttonNext{
+    background: white;
+    border: none;
+    padding: 10px 50px;
+    border-radius: 20px;
+    color: #640ada;
+    font-size: 30px;
+    letter-spacing: 3px;
+    -webkit-box-shadow: 3px 10px 13px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 3px 10px 13px 0px rgba(0,0,0,0.75);
+    box-shadow: 8px 12px 10px 0px rgba(0,0,0,0.75);
+    cursor: pointer;
+    text-decoration: none;
+}
+
+
+#title{
+    font-size: 35px;
+    letter-spacing: 5px;
     transition: 0.5s;
     cursor: default;
     color: white;
@@ -36,15 +78,17 @@ body {
 }
 
 #cardBoard {
-    width: 550px;
+    width: 95%;
     height: 550px;
     display: flex;
     flex-wrap: wrap;
 }
 
 .memoryCard {
-    width: calc(25% - 10px);
-    height: 36%;
+    /* width: calc(25% - 10px); */
+    /* height: 36%; */
+    width: 205px;
+    height: 200px;
     margin: 5px;
     transform-style: preserve-3d;
     transition: 0.7s;
@@ -90,9 +134,7 @@ body {
     border-radius: 25px;
     padding: 25px;
 }
-.show{
-    display: flex !important;
-}
+
 .congrats{
     text-align: center;
     color: white;
@@ -102,7 +144,7 @@ body {
 
 .playAgain{
     font-size: 30px;
-    padding: 5px 25px;
+    padding: 15px 35px;
     border-radius: 25px;
     border: none;
     letter-spacing: 2px;
@@ -132,7 +174,6 @@ body {
         background-color: #000;
     }
     #box{
-        background-color: #6130b9;
         padding: 25px;
         border-radius: 30px;
         height: 90%;
@@ -142,11 +183,11 @@ body {
     }
     #title{
         margin: 0;
-        font-size: 25px;
+        font-size: 20px;
         position: relative;
         bottom: 15px;
         width: auto;
-        margin-bottom: 10px;
+        text-align: center;
     }
     .memoryCard {
         width: 40%;
@@ -169,17 +210,58 @@ body {
         height: 95%;  
     }
 
-    .congrats, .playAgain{
-        font-size: 25px;
+    .congrats{
+        font-size: 20px;
+        margin-bottom: 10px;
+
+    } 
+    .playAgain{
+        font-size: 20px;
+        padding: 10px;
+        margin-top: 10px;
     }
-    
+
     .complete{
         display: flex;
         align-items: center;
         flex-direction: column;
         border-radius: 25px;
         justify-content: space-between;
-        height: 89vh;
+        height: 100%;
+        padding: 0;
     }
+    .copy{
+        position: unset;
 
+    }
+    #nxtLvl{
+        position: absolute;
+        height: 98vh;
+        width: 90%;
+        background: #640ada;
+        background: linear-gradient(0deg, rgba(49,0,75,1) 10%, rgba(0,9,255,1) 100%);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 25px;
+    }
+    .textNext{
+        color: white;
+        text-align: center;
+        padding: 0 10px;
+        font-size: 20px;
+        line-height: 40px;
+    }
+    .buttonNext{
+        margin: 0 10px;
+        font-size: 20px;
+        line-height: 30px;
+    }
+}
+.show{
+    display: flex !important;
+}
+.block{
+    display: none !important;
 }

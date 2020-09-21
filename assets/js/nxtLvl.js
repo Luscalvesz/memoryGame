@@ -6,6 +6,9 @@ const images = [
     'grape.png',
     'strawberry.png',
     'watermelon.png',
+    'tomato.png',
+    'orange.png',
+    'lemon.png',
 ];
 let cardHTML = '';
 
@@ -19,6 +22,7 @@ images.forEach(img => {
 cardboard.innerHTML = cardHTML + cardHTML;
 
 const cards = document.querySelectorAll('.memoryCard');
+const nxtLevel = document.getElementById('nxtLvl')
 let firstCard, secondCard;
 let lockCard = false;
 
@@ -68,14 +72,18 @@ function resetCards(isMatch = false) {
     [firstCard, secondCard, lockCard] = [null, null, false]
 }
 
-function endGame() {
-    var box = document.getElementById('box')
+cards.forEach(card => card.addEventListener('click', flipCard))
 
+function endGame() {
+    
     if (cards[0].className == 'memoryCard flip' && cards[1].className == 'memoryCard flip' 
     && cards[2].className == 'memoryCard flip' && cards[3].className == 'memoryCard flip'
     && cards[4].className == 'memoryCard flip' && cards[5].className == 'memoryCard flip'
-    && cards[6].className == 'memoryCard flip' && cards[7].className == 'memoryCard flip') {
-       
+    && cards[6].className == 'memoryCard flip' && cards[7].className == 'memoryCard flip'
+    && cards[8].className == 'memoryCard flip' && cards[9].className == 'memoryCard flip'
+    && cards[10].className == 'memoryCard flip' && cards[11].className == 'memoryCard flip'
+    && cards[12].className == 'memoryCard flip' && cards[13].className == 'memoryCard flip'){
+        
         setTimeout(() => {
             box.innerHTML = `<div class='complete'><p class='congrats'>Você completou o jogo!<br> <spam>Parabéns!</spam></p>
             <img src="imgs/brabo.png" alt="lanso a braba fdp">
@@ -84,6 +92,3 @@ function endGame() {
         }, 2000);
     }
 }
-
-// add eventListener
-cards.forEach(card => card.addEventListener('click', flipCard))
